@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="row align-items-center" *ngFor="let contact of contacts">
+    <div class="row align-items-center" *ngFor="let contact of contacts" [class.selected]="contact === selectedContact">
         <div class="col">
             <div class="panel">
                 <div class="panel-body p-t-10">
@@ -9,7 +9,7 @@
                         </a>
                         <div class="pull-right btn-group-sm">
                             <a href="#" class="btn btn-success tooltips" data-placement="top" data-toggle="tooltip"
-                                data-original-title="Edit">
+                                data-original-title="Edit" (click)="onSelect(contact)">
                                 <i class="fa fa-pencil"></i>
                             </a>
                             <a href="#" class="btn btn-danger tooltips" data-placement="top" data-toggle="tooltip"
@@ -29,3 +29,4 @@
         </div>
     </div>
 </div>
+<app-contact-detail [contact]="selectedContact"></app-contact-detail>
