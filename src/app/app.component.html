@@ -1,6 +1,16 @@
 <div class="container">
+  <div class="row">
+    <div class="c0l">
+      <nav>
+        <a routerLink="/contacts">Contacts</a>
+      </nav>
+    </div>
+  </div>
+</div>
+<div class="container">
   <div class="row align-self-center">
     <h1 class="col p-t-10">{{ title }}</h1>
   </div>
 </div>
-<app-contacts></app-contacts>
+<router-outlet></router-outlet>
+<!-- <app-contacts></app-contacts> -->

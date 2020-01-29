@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Contacts } from "../mockContact";
+// import { Contacts } from "../mockContact";
 import { Contact } from "../contact";
-import { concat } from 'rxjs';
+import { ContactService } from '../contact.service';
 
 @Component({
   selector: 'app-contacts',
@@ -10,10 +10,15 @@ import { concat } from 'rxjs';
 })
 export class ContactsComponent implements OnInit {
 
-  constructor() { }
-  contacts = Contacts;
+  constructor(private contactService: ContactService) { }
+  contacts: Contact[];
+
+  getContacts(): void {
+    this.contacts = this.contactService.getContacts();
+  }
   selectedContact: Contact;
   ngOnInit() {
+    this.getContacts();
     console.log("Contact arr => ", this.contacts)
   }
 
