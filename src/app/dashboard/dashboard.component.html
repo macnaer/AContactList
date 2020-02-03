@@ -1,6 +1,6 @@
 <h3>Top Contacts</h3>
 <div class="grid grid-pad">
-    <a *ngFor="let contact of contacts" class="col-1-4">
+    <a *ngFor="let contact of contacts" class="col-1-4" routerLink="/detail/{{contact.id}}">
         <div class="module hero">
             <h4>{{contact.name}}</h4>
         </div>

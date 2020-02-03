@@ -12,4 +12,8 @@ export class ContactService {
   getContacts(): Observable<Contact[]> {
     return of(Contacts);
   }
+
+  getContact(id: number): Observable<Contact> {
+    return of(Contacts.find(contact => contact.id === id));
+  }
 }

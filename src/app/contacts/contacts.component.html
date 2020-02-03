@@ -9,7 +9,7 @@
                         </a>
                         <div class="pull-right btn-group-sm">
                             <a href="#" class="btn btn-success tooltips" data-placement="top" data-toggle="tooltip"
-                                data-original-title="Edit" (click)="onSelect(contact)">
+                                data-original-title="Edit" routerLink="/detail/{{contact.id}}">
                                 <i class="fa fa-pencil"></i>
                             </a>
                             <a href="#" class="btn btn-danger tooltips" data-placement="top" data-toggle="tooltip"
@@ -19,6 +19,7 @@
                         </div>
                         <div class="info">
                             <h4>{{ contact.name }}</h4>
+                            <span class="badge">{{contact.id}}</span>
                             <p class="text-muted">{{ contact.description }}</p>
                         </div>
                     </div>
