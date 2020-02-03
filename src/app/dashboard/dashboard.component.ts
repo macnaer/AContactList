@@ -18,10 +18,9 @@ export class DashboardComponent implements OnInit {
 
   getContacts(): void {
     console.log("Test contacts ", this.contacts);
-    this.contacts = this.contactService.getContacts().slice(1, 6);
-    // this.contactService.getContacts()
-    //   .subscribe(contacts => this.contacts = contacts.slice(1, 5));
-    // .subscribe(contacts => this.contacts = contacts.slice(1, 5));
+    this.contactService.getContacts()
+      .subscribe(contacts => this.contacts = contacts.slice(1, 5));
+
   }
 
 }
