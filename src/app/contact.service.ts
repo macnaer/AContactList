@@ -3,12 +3,16 @@ import { Contact } from './contact';
 import { Contacts } from './mockContact';
 import { Observable, of } from 'rxjs';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class ContactService {
 
   constructor() { }
+
+
+
   getContacts(): Observable<Contact[]> {
     return of(Contacts);
   }
