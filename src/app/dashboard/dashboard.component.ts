@@ -11,12 +11,18 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class DashboardComponent implements OnInit {
 
   contacts: Contact[];
+
+  APIData: any[];
   constructor(private contactService: ContactService, private http: HttpClient) { }
-  apiUrl = "https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5";
+  apiUrl = `https://newsapi.org/v2/top-headlines?country=ua&category=sport&apiKey=18f1c87e444741aca30db0a569bba999`;;
 
   ngOnInit() {
     this.getContacts();
-    console.log("Test http", this.http.get(this.apiUrl));
+    this.http.get<any>(this.apiUrl).subscribe(data => {
+      this.APIData = data.articles;
+      console.log("API Data ", this.APIData);
+    })
+
   }
 
   getContacts(): void {
